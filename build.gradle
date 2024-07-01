@@ -17,7 +17,7 @@ tasks.withType(JavaCompile).configureEach {
 
 def cucumberVersion = "7.3.2"
 def cucumberGherkinVersion = "23.0.1"
-def adapterVersion = "[0,)"
+def adapterVersion = "2.3.4"
 
 dependencies {
     testImplementation "ru.testit:testit-java-commons:$adapterVersion"
