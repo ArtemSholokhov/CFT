@@ -1,30 +1,30 @@
 Feature: AnnotationTests
 
 
-  @ExternalId=parametrized_test_{number}_{value}_success
-    @DisplayName=parametrized_test_{number}_{value}_success_display_name
-    @Title=parametrized_test_{number}_{value}_success_title
-    @Description=parametrized_test_{number}_{value}_success
+  @ExternalId=login_attempt_{login}_{password}_test_success
+    @DisplayName=login_attempt_{login}_{password}_test
+    @Title=login_attempt_{login}_{password}_test_title
+    @Description=login_attempt_{login}_{password}_test_description
   Scenario Outline: Parametrized test success
-    When get parameters <number> <value>
+    When get parameters <login> <password>
     Then return true
 
     Examples:
-      | number | value    |
-      | 1      | string01 |
-      | 2      | string02 |
-      | 3      | string03 |
+      | login    | password  |
+      | admin    | Qwerty123 |
+      | tester   | tester    |
+      | observer | admin1234 |
 
-  @ExternalId=parametrized_test_{number}_{value}_failed
-    @DisplayName=parametrized_test_{number}_{value}_failed_display_name
-    @Title=parametrized_test_{number}_{value}_failed_title
-    @Description=parametrized_test_{number}_{value}_failed
+  @ExternalId=address_line_check_{city}_{zipcode}_failed
+    @DisplayName=address_line_check_{city}_{zipcode}_failed_display_name
+    @Title=address_line_check_{city}_{zipcode}_failed_title
+    @Description=address_line_check_{city}_{zipcode}_description
   Scenario Outline: Parametrized test failed
-    When get parameters <number> <value>
+    When get parameters1 <city> <zipcode>
     Then return false
 
     Examples:
-      | number | value    |
-      | 1      | string01 |
-      | 2      | string02 |
-      | 3      | string03 |
+      | city   | zipcode |
+      | Moscow | 123099  |
+      | Tula   | 300001  |
+      | Omsk   | 644001  |
